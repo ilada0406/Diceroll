@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+        body{
+            text-align: center;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+
+<p>Random Images:</p>
+<div class="imgR">
+<img id="image1" src="./images/1.PNG" alt="Image 1">
+<img id="image2" src="./images/3.PNG" alt="Image 2">
+<img id="image3" src="./images/5.PNG" alt="Image 3">
+</div>
+
+<button id="Button">Random</button>
+
+<script>
+const images = [
+  "./images/1.PNG",
+  "./images/2.PNG",
+  "./images/3.PNG",
+  "./images/4.PNG",
+  "./images/5.PNG",
+  "./images/6.PNG",
+];
+
+
+document.getElementById("Button").addEventListener("click", function() {
+  document.getElementById("image1").src = getRandomImage(images);
+  document.getElementById("image2").src = getRandomImage(images);
+  document.getElementById("image3").src = getRandomImage(images);
+  document.getElementById("image4").src = getRandomImage(images);
+  document.getElementById("image5").src = getRandomImage(images);
+  document.getElementById("image6").src = getRandomImage(images);
+});
+
+function getRandomImage(imageList) {
+  const randomIndex = Math.floor(Math.random() * imageList.length);
+  return imageList[randomIndex];
+}
+</script>
+
+</body>
+</html>
